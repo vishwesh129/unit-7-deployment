@@ -1,0 +1,17 @@
+computer - node is installed - package.json 
+
+AWS/GCP/Azure
+Heroku/cyclic/railway/render
+
+cyclic
+
+Ensure that : 
+1. Don't hardcode the port number, instead keep a PORT key in env and use that
+2. npm start/npm run start is what is used most of the times by default - 
+    a) Always have a script in package.json with the key "dev" (instead of keeping the key as "server" etc though it'll work locally)
+    b) The value should be "node index.js"
+3. Ensure that your backend code folder is outside the masai/any organisation repo in your computer and push it to your own personal repo
+4. Create a new git repo, initialise git in your folder, and add the origin
+5. Ignore node_modules and .env while pushing your code to github by using .gitignore
+6. Ensure that all your environment variables are provided correctly/exactly to your deployment provider like cyclic etc
+
