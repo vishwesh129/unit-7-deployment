@@ -15,3 +15,85 @@ Ensure that :
 5. Ignore node_modules and .env while pushing your code to github by using .gitignore
 6. Ensure that all your environment variables are provided correctly/exactly to your deployment provider like cyclic etc
 
+MongoDB Atlas
+1. Make it accessible by everywhere/all IP addresses - "ALLOW ACCESS FROM ANYWHERE"
+2. You'll have Atlas URL like this - mongodb+srv://niftynihal:<password>@cluster0.vmc6r.mongodb.net/
+    a) replace <password> with your actual mongodb atlas password
+    b) after mongodb.net/ add the database name, so it'll be mongodb+srv://niftynihal:mypassword@cluster0.vmc6r.mongodb.net/eval
+    c) keep this in .env and don't push to github but give this string and other .env variables to cyclic etc
+
+
+Order 
+1. Database deployed - MongoDB Atlas
+2. Backend deployed - cyclic
+3. Frontend deployed - netlify/vercel etc
+
+
+Before Evaluation
+Backend and DB
+1. Have a basic backend express app ready - with a basic endpont /
+2. ^ Create all the folders like config folder, db.js, package.json
+3. Install the packages and keep ready - express, mongoose
+4. Have your mongodb atlas url ready - can keep db.js
+
+Frontend
+1. Have your react app ready even with authentication code/UI if required
+
+
+In the Evaluation
+1. you'll be pushing the code to github every 15 mins or so
+2. you'll be copying the backend folder outside masai repo and push to new repo and use cyclic to deploy
+3. you'll be submitting - frontend deployed link, backend deployed link and the github repo
+
+
+Image upload
+Frontend -> formData
+Backend -> multer middleware
+Database -> we don't store any media like image/audio/video in our mongodb, we instead store their URL's
+Storage -> local folder/AWS S3/Cloudinary
+https://github.com/Inder-Pal-github/Image-Upload-Frontend
+https://github.com/Inder-Pal-github/Image-Upload-Backend
+https://ytxmk6-3000.csb.app/
+
+
+Relationships - populate in mongoose
+we stored the author_id as string
+_id in users collection - ObjectID
+Mongoose populate
+https://mongoosejs.com/docs/populate.html
+
+
+AWS
+
+server -> deploy -> machine/computer
+localhost -> we are using our own machine/computer
+AWS/GCP/Azure cloud -> we take a machine/computer for rent
+
+
+Why AWS/GCP/Azure cloud? 
+1. to be accessible all the time
+2. to be accessible for everyone
+3. Imagine i have an application ->
+    Web application -> send customised gifts 
+    -> every other month - 10,000 requests - computer (18GB ram, 10TB)
+    -> in december and february - 10 x the no of requests
+        128GB ram, 100TB
+
+
+AWS
+Amazon web services
+
+web services : 
+1. EC2 - Elastic cloud compute
+2. S3 - Simple storage service - https://zoom-lecture-recordings.s3.ap-south-1.amazonaws.com/83395522072/nxm_201_-_b25_1682574821000    
+3. ..
+4. ..
+
+Resources
+AWS I - https://masai-course.s3.ap-south-1.amazonaws.com/lecture/5715/material/6e4243f5511fd6ef0f03e9f386d54403/zoom_0.mp4
+AWS II - https://masai-course.s3.ap-south-1.amazonaws.com/lecture/5850/material/234a1273487bf7b2e2061b9b56373a29/zoom_0.mp4
+AWS III - https://masai-course.s3.ap-south-1.amazonaws.com/lecture/6009/material/37d7902cb2d3de686e497e31624d82e0/zoom_0.mp4
+
+
+What is backend 
+https://youtu.be/XBu54nfzxAQ
