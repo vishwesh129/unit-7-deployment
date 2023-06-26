@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 
 app.get("/", (req, res) => {
-    res.send({"msg" : "Base of API" , "name" : process.env.NAME})
+    res.send({"msg" : `Base of API of ${process.env.NAME}`})
 })
 
 app.get("/blogs", (req, res) => {
